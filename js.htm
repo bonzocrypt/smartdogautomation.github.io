@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Javascript Page</title>
+  <meta name="author" content="Dan Belliveau">
+  <meta name="description" content="Potential Javascript Ideas">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="images/smarticon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link href="eventpricing.css" rel="stylesheet" type="text/css">
+  <script src="eventpricing.js" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+<!--
+function FP_preloadImgs() {//v1.0
+ var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
+ for(var i=0; i<a.length; i++) { d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; }
+}
+
+function FP_swapImg() {//v1.0
+ var doc=document,args=arguments,elm,n; doc.$imgSwaps=new Array(); for(n=2; n<args.length;
+ n+=2) { elm=FP_getObjectByID(args[n]); if(elm) { doc.$imgSwaps[doc.$imgSwaps.length]=elm;
+ elm.$src=elm.src; elm.src=args[n+1]; } }
+}
+
+function FP_getObjectByID(id,o) {//v1.0
+ var c,el,els,f,m,n; if(!o)o=document; if(o.getElementById) el=o.getElementById(id);
+ else if(o.layers) c=o.layers; else if(o.all) el=o.all[id]; if(el) return el;
+ if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
+ for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
+ f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
+ for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
+ return null;
+}
+// -->
+</script>
+<style type="text/css">
+.a1{
+position:relative;
+font-family:Verdana;
+font-size:20px;
+color:#888888;
+}
+</style>
+
+<script language="JavaScript">
+
+/*****************************************
+* Lottery Picker (By Kurt at kurt.grigg@virgin.net)
+* Featured on/available at http://www.dynamicdrive.com/
+* Modified by DynamicDrive.com for below config options
+* This notice must stay intact for use.
+*****************************************/
+
+var totalnumbers=4 //input total numbers to generate
+var lowerbound=1   //input lower bound for each random number
+var upperbound=49  //input upper bound for each random number
+
+function lotto(){
+B=' ';	
+LottoNumbers=new Array();	
+ for (i = 1; i <= totalnumbers; i++)
+ {
+ RandomNumber = Math.round(lowerbound+Math.random()*(upperbound-lowerbound));
+  for (j = 1; j <= totalnumbers; j)
+  {
+  if (RandomNumber == LottoNumbers[j])
+    {
+     RandomNumber=Math.round(lowerbound+Math.random()*(upperbound-lowerbound));
+     j=0;
+    }
+  j++;
+  }
+ LottoNumbers[i]=RandomNumber;
+ }
+LottoNumbers=LottoNumbers.toString();
+X=LottoNumbers.split(',');
+ for (i=0; i < X.length; i++)
+ {
+ X[i]=X[i]+' ';
+ if (X[i].length==2) 
+ X[i]='0'+X[i];
+ } 
+X=X.sort();
+ for (i=0; i < X.length; i++)
+ {
+ OutPut=B+=X[i];
+ }
+if (document.all)document.all.layer1.innerHTML=OutPut;
+if (document.getElementById)document.getElementById("layer1").innerHTML=OutPut;
+if (document.layers){
+  document.layers.layer1.document.open();
+  document.layers.layer1.document.write("<span style='position:absolute;top:0px;left:0px;font-family:Verdana;font-size:12px;color:#888888;text-align:center'> "+OutPut+"</span>");
+  document.layers.layer1.document.close();
+  }
+  T=setTimeout('lotto()',20);
+//window.status=OutPut;
+}
+function StOp(){
+setTimeout('clearTimeout(T)',1000);
+}
+//-->
+</script>
+  
+</head>
+<body onload="FP_preloadImgs(/*url*/'hubitat.jpg')"><br>
+<div id="wrapper">
+<header>
+   <img src="images/logo.jpg" alt="SmatDog Automation Site Logo">
+</header>
+<nav>
+<ul>
+  <li><a href="index.htm">Home</a></li> 
+  <li><a href="about.htm"><span class="selected">What's New</span></a></li> 
+  <li><a href="contact.htm">Contact</a></li> 
+  <li><a href="devices.htm">Devices</a></li> 
+  </ul></nav>
+<main>
+
+<h1>10 Unique JavaScript Items</h1>
+	<ol style="list-style:upper">
+		<li><script type="text/javascript">
+	        var answer = prompt("If you have a wholesale account please enter your password here, otherwise click cancel", "");
+            document.write("No recognized password, please click Home to continue to our retail site. " +answer);</script>
+	    </li><br><br>
+		<li>
+		<input type="button" onclick="alert('Your secret password is 1234');" value="Click here for the secret password" />
+		</li><br><br>
+		<li><a href="javascript: alert ('The current time is: ' + new Date());">Click here to find out what time and day it is right now!</a>
+		</li><br><br>
+		<li><a href="javascript: alert ('ALL SYSTEMS ONLINE');" style="color:#CC3300">Click Here For Important Alerts</a>
+		</li><br><br>
+		<li><select onchange="if(this.options[this.selectedIndex].value != '' ) location.href=this.options[this.selectedIndex].value;">
+ 	        <option value="">Pick a retailor:</option>
+ 	        <option value="http://www.smartthings.com/">Smartthing</option>
+  	        <option value="https://www.hubitat.com/">Hubitat</option>
+  	        <option value="https://www.bestbuy.com/">Best Buy</option>
+ 	        <option value="https://www.amazon.com/">Amazon</option></select>
+ 	    </li><br><br>
+		<li><table border='0' width=50 height=50>
+			<tr valign='middle'>
+			<td align='center'>
+			<form name=form>
+			<input type=button value='Click here for your Florida Pick 4 lucky lotto numbers' onClick="lotto();StOp()"></form><span id=layer1 class=a1>Result</span></td></tr></table>
+		</li><br><br>
+		<li><form name="WebQuoteForm" id="WebQuoteForm" method="post" action="mailto:smartdogautomation@gmail.com?Subject=Quote Request" onReset="location.reload()">
+
+
+<h1>Project Estimator</h1>
+<br>
+
+<table cellspacing="2">
+<tr align="left">
+   <th>Item</th><th>Price</th><th>Quantity</th><th>Cost</th>
+</tr>
+
+<tr>
+   <td>Economic</td>
+   <td><input name="price1" id="price1" size="8" value="150.00" 
+        tabindex="-1" readonly="readonly" /></td>
+   <td><input name="qty1" id="qty1" size="8" value="0" onBlur="calcCost(1)" />   </td>
+   <td><input name="cost1" id="cost1" size="12" value="0.00" 
+        tabindex="-1" readonly="readonly" /></td>
+</tr>
+<tr>
+   <td>Advanced&nbsp;&nbsp;</td>
+   <td><input name="price2" id="price2" size="8" value="500.00" 
+        tabindex="-1" readonly="readonly" /></td>
+   <td><input name="qty2" id="qty2" size="8" value="0" onBlur="calcCost(2)" />   </td>
+   <td><input name="cost2" id="cost2" size="12" value="0.00" 
+        tabindex="-1" readonly="readonly" /></td>
+</tr>
+<tr>
+   <td>Full Home Automation</td>
+   <td><input name="price3" id="price3" size="8" value="2500.00" 
+        tabindex="-1" readonly="readonly" /></td>
+   <td><input name="qty3" id="qty3" size="8" value="0" onBlur="calcCost(3)" />   </td>
+   <td><input name="cost3" id="cost3" size="12" value="0.00" 
+        tabindex="-1" readonly="readonly" /></td>
+</tr>
+<tr>
+   <td colspan="3"><strong>Total estimated cost for a basic site </strong></td>
+   <td><input name="total" id="total" size="12" value="0.00" 
+        tabindex="-1" readonly="readonly" /></td>
+</tr>
+</table>
+
+</form>
+</li><br><br>
+		<li>	<script type="text/javascript">
+  var update = new Date(document.lastModified);
+  month=update.getMonth() +1;
+  date=update.getDate()
+  year=update.getFullYear()
+  document.write("This Page was Last Updated - " + month +" /" +date+ "/ "+ year)
+</script>
+
+</li><br><br>
+	    <li>Change the image below by moving your mouse over it to find out an alternative to Smartthings
+	    <img src="images/smartthings.jpg" alt="smartthings" id="img1" onmouseover="FP_swapImg(1,0,/*id*/'img1',/*url*/'images/hubitat.jpg')">
+	    </li><br><br>
+
+	
+<p style="clear:both"><br>
+	
+
+
+		<li><a href="#" onMouseOver= "alert('I told you not to mouse over that text!')">DON'T PLACE YOUR CURSOR OVER THIS TEXT</a>
+		</li>														
+	</ol>
+
+
+	
+	
+
+
+
+
+</main>
+	<footer>
+	&copy; 2021 SmartDog Automation. All Rights Reserved.<br>
+	  <a href="mailto:smartdogautomation@gmail.com">smartdogautomation@gmail.com</a> or call
+	  <a href="tel:9413121391">(941)312-1391</a><br><br>
+	</footer>
+</div> <!-- /wrapper -->
+
+</body>
+</html>

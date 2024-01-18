@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Media Page</title>
+  <meta name="description" content="Media Page">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dan Belliveau">
+  <link href="images/smarticon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link href="eventpricing.css" rel="stylesheet" type="text/css">
+</head>
+<body><br>
+<div id="wrapper">
+<header>
+   <img src="http://www.eventpricing.com/images/logo.jpg">
+</header>
+<nav>
+<ul>
+  <li><a href="index.htm">Home</a></li> 
+  <li><a href="about.htm">What's New</a></li> 
+  <li><a href="contact.htm">Contact</a></li> 
+  <li><a href="devices.htm">Devices</a></li> 
+</ul>
+</nav>
+<main>
+
+	<h1>Media Page</h1>
+
+<ol style="list-style:normal">
+
+	<li>
+		<h3>A quick welcome message</h3>
+	    <audio controls="controls"><source src="media/welcome.mp3" type="audio/mpeg">
+	    <source src="media/welcome.ogg" type="audio/ogg">This browser does not support this audio format.</audio>
+	</li>
+	<br>
+	<li>
+		<h3>He doesn't know I'm there but when he finds out he will protect us from the rabbit!</h3>
+		<video width="500" height="300" controls><source src="media/attack_dog.mp4" type="video/mp4"><source src="media/attack_dog.ogg" type="video/ogg">
+ 		Your browser does not support the video tag.
+		</video>
+	</li>
+
+		
+<br>
+
+	<li>
+			<h3>Animated GIF</h3>
+	   	    <img src="images/motion.gif" alt="Automated Image">
+	   	    	<p style="clear:both">	
+    </li>
+<br>
+		
+		
+	<li>
+		<h3>Slideshow of a few devices</h3>
+  <img class="mySlides" src="images/huekit.jpg" style="width:400px">
+  <img class="mySlides" src="images/googlealexa.jpg" style="width:400px">
+  <img class="mySlides" src="images/smartlock.jpg" style="width:400px">
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+
+	<p style="clear:both">		
+	</li>
+	<br><br>
+	
+	<li>
+			<h3>Click on Next or Ecobee to learn more</h3>	
+	<map id="ImgMap0" name="ImgMap0">
+		<area alt="" coords="67, 123, 55" href="https://store.google.com/us/product/nest_learning_thermostat_3rd_gen?hl=en-US" shape="circle">
+		<area coords="153, 62, 278, 167" href="https://www.ecobee.com/en-us/" shape="rect">
+	</map>
+	
+	<img src="images/nestvsecobee.jpg" usemap="#ImgMap0"></li>
+	<br>
+		<p style="clear:both"><br>	
+	<li>
+		<h3>This Racoon doesn't like to be recorded</h3>	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/Pgrpmh24_YQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	
+	
+	</li>
+
+			
+	
+	
+</ol>
+
+<p style="clear:both">
+
+	</main><footer><br>
+	&copy; 2021 SmartDog Automation. All Rights Reserved.<br>
+	  <a href="mailto:smartdogautomation@gmail.com">smartdogautomation@gmail.com</a> or call
+	  <a href="tel:9413121391">(941)312-1391</a><br><br>
+	</footer>
+</div> <!-- /wrapper -->
+
+</body>
+</html>
